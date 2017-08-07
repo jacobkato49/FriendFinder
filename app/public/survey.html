@@ -190,27 +190,71 @@
   </div>
 
 
-<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script type="text/javascript">
+  <script src='https://code.jquery.com/jquery.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' integrity='sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS' crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script
+<!-- Modal -->
+
+        <div id="resultsModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                        <h2 class="modal-title">
+                            <strong>Best Match</strong>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="matchName"></h2>
+                        <img id="matchImg" style="width:100%">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
 
 
-	$('#submit').on("click", function() {
-		var userInput = {
-			name: $('#name').val().trim(),
-			photo: $('#photo').val().trim(),
-			scores: [$('#question01').val().trim(), $('#question02').val().trim(), $('#question03').val().trim(), $('#question04').val().trim(), $('#question05').val().trim(), $('#question06').val().trim(), $('#question07').val().trim(), $('#question08').val().trim(), $('#question09').val().trim(), $('#question10').val().trim()]
+	$("#submit").on("click",function(){
+		function validateform(){
+			var isValid = true;
+			$(".form-control").each(function(){
+				if($(this).val()==="")
+					isValid = false;
+			});
+			$(".chosen-select").each(function(){
+				if($(this).val()==="")
+					isValid = false;
+			})
+			return isValid;
 		}
-		var currentURL = window.location.origin;
-		$.post(currentURL + '/api/friends', userInput, function(data) {
-			$("#bestFriendName").text(data.name);
-			$("#bestFriendImg").attr("src", data.photo);
-			$("#bestFriendModal").modal("show");
-		});
-		return false;
-	});
-</script>
 
+		if (validateform()==true){
+			var userData = {
+				name: $("#name").val(),
+				photo: $("#photo").val(),
+				scores: [$("#q1").val(),$("#q2").val(),$("#q3").val(),$("#q4").val(),$("#q5").val(),$("#q6").val(),$("#q7").val(),$("#q8").val(),$("#q9").val(),$("#q10").val(),]
+			}
+
+			var currentURL = window.location.origin;
+
+			$.post(currentURL + "/api/friends", userData, function(data){
+				$("#matchName").text(data.name);
+				$("#matchImg").attr("src",data.photo);
+
+				$("#resultsModal").modal('toggle');
+			})
+		}
+		else {
+			alert("Please fill out all fields before submitting!");
+		}
+		return false;
+	})
+
+        </script>
 
 </body>
 </html>
