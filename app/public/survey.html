@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Friend Finder-Survey</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+<body background= "https://static.pexels.com/photos/207896/pexels-photo-207896.jpeg">
+  <div class= "container-fluid">
+    <div class="jumbotron">
+
+      <h1>Survey Questions</h1><br>
+      <hr>
+
+      <form method="POST" action="/api/friends">
+        <h3><strong>About You</strong></h3>
+        <fieldset>
+          <label for="name">Enter Name Here (required)</label>
+          <input type="text" class="form-control" placeholder="Your Name" id="name" name="name" required>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <label for="photo">Link of the Photo Image (required)</label>
+          <input type="text" class="form-control" placeholder="http://www.usbcg.com/wordpress/wp-content/uploads/2015/11/placeholder.png" id="photo" name="photo" required>
+        </fieldset>
+        <hr>
+
+        <h4><strong>Question 1</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">I love the color blue.</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question01" name="scores[0]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 2</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">I love pizza.</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question02" name="scores[1]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 3</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">I love the City of Los Angeles</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question03" name="scores[2]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 4</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">I love long romantic walks on the beach></label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question04" name="scores[3]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 5</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">I love the color purple.</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question05" name="scores[4]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 6</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">I love eating donuts.</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question06" name="scores[5]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 7</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">I love the outdoors.</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question07" name="scores[6]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 8</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">Scary movies are the best!</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question08" name="scores[7]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 9</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">I like to travel.</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question09" name="scores[8]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <h4><strong>Question 10</strong></h4>
+        <fieldset class="form-group">
+          <label for="Question01">Basketball is my favorite sport.</label>
+          <br>
+          <div class="col-md-4">
+            <select class="form-control" id="question10" name="scores[9]">
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div>
+        </fieldset>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+</body>
+</html>
